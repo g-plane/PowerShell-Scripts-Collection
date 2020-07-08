@@ -4,17 +4,17 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: f098969f9830f7e0dbf7b630ffa13669579489d1b2b3a7d54d1611a1e6edb29a
+-- hash: fec189ec2f3573f5e47c10636c6ab986b96cf5d187dce7b8b861e1e4881e07b0
 
 name:           rename-subtitle-files
 version:        0.1.0.0
 description:    Please see the README on GitHub at <https://github.com/githubuser/rename-subtitle-files#readme>
-homepage:       https://github.com/githubuser/rename-subtitle-files#readme
-bug-reports:    https://github.com/githubuser/rename-subtitle-files/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2020 Author name here
-license:        BSD3
+homepage:       https://github.com/g-plane/rename-subtitle-files#readme
+bug-reports:    https://github.com/g-plane/rename-subtitle-files/issues
+author:         Pig Fang
+maintainer:     g-plane@hotmail.com
+copyright:      2020 Pig Fang
+license:        MIT
 license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
@@ -23,7 +23,7 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/rename-subtitle-files
+  location: https://github.com/g-plane/rename-subtitle-files
 
 library
   exposed-modules:
