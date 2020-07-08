@@ -9,7 +9,7 @@ import           System.IO                      ( FilePath )
 
 names :: [FilePath] -> [String]
 names =
-  map (T.unpack . T.dropEnd 4)
+  map (T.unpack . T.append (T.pack ".ass") . T.dropEnd 4)
     . filter
         (\x -> T.isSuffixOf (T.pack ".mp4") x || T.isSuffixOf (T.pack ".mkv") x)
     . map T.pack

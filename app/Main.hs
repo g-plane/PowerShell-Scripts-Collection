@@ -6,4 +6,4 @@ import           System.Directory
 main :: IO ()
 main = do
   entries <- listDirectory "."
-  mapM_ (uncurry renameFile) $ zip (names entries) (subtitles entries)
+  mapM_ (uncurry renameFile) $ zip (subtitles entries) (names entries)
