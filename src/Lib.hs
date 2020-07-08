@@ -18,8 +18,7 @@ subtitles :: [FilePath] -> [FilePath]
 subtitles =
   map T.unpack
     . filter
-        (\x ->
-          T.isSuffixOf (T.pack ".ass") x
-            && (T.isInfixOf (T.pack "cht") x || T.isInfixOf (T.pack "TC") x)
+        (\x -> T.isSuffixOf (T.pack ".ass") x
+          && not (T.isInfixOf (T.pack "cht") x || T.isInfixOf (T.pack "TC") x)
         )
     . map T.pack
