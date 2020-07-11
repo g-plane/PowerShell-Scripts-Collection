@@ -15,7 +15,7 @@ names xs =
     & filter
         (\x -> T.isSuffixOf (T.pack ".mp4") x || T.isSuffixOf (T.pack ".mkv") x)
     & map (T.dropEnd 4)
-    & map (flip T.append (T.pack ".ass"))
+    & map (`T.append` T.pack ".ass")
     & map T.unpack
 
 subtitles :: [FilePath] -> [FilePath]
