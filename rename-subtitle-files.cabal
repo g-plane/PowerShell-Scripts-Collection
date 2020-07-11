@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: fec189ec2f3573f5e47c10636c6ab986b96cf5d187dce7b8b861e1e4881e07b0
+-- hash: f1980338d0e1edda47eb2965e5ff502ebb0fddb0fe1207ef4a322fbb406a4fbd
 
 name:           rename-subtitle-files
 version:        0.1.0.0
@@ -35,7 +35,7 @@ library
   build-depends:
       base >=4.7 && <5
     , directory
-    , text
+    , extra
   default-language: Haskell2010
 
 executable rename-subtitle-files-exe
@@ -48,8 +48,8 @@ executable rename-subtitle-files-exe
   build-depends:
       base >=4.7 && <5
     , directory
+    , extra
     , rename-subtitle-files
-    , text
   default-language: Haskell2010
 
 test-suite rename-subtitle-files-test
@@ -63,6 +63,6 @@ test-suite rename-subtitle-files-test
   build-depends:
       base >=4.7 && <5
     , directory
+    , extra
     , rename-subtitle-files
-    , text
   default-language: Haskell2010
