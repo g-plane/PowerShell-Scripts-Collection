@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: f0540b0047c98ca3fe40f73b0c483f477d3ef09965d9f91afd00e65d3ba7e638
+-- hash: 0aee78b0e5179de8d9f00213a6b9dc71d5571957bddc97c677ece4c250835940
 
 name:           rename-subtitle-files
 version:        0.1.0.0
@@ -19,7 +19,6 @@ license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
     README.md
-    ChangeLog.md
 
 source-repository head
   type: git
