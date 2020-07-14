@@ -12,10 +12,12 @@ import           System.IO                      ( FilePath )
 names :: [FilePath] -> [String]
 names xs =
   xs
-    & filter (\x -> isSuffixOf ".mp4" x || isSuffixOf ".mkv" x)
+    & filter (\x -> ".mp4" `isSuffixOf` x || ".mkv" `isSuffixOf` x)
     & map (dropEnd 4)
     & map (++ ".ass")
 
 subtitles :: [FilePath] -> [FilePath]
 subtitles = filter
-  (\x -> isSuffixOf ".ass" x && not (isInfixOf "cht" x || isInfixOf "TC" x))
+  (\x ->
+    ".ass" `isSuffixOf` x && not ("cht" `isInfixOf` x || "TC" `isInfixOf` x)
+  )
