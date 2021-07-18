@@ -1,6 +1,9 @@
 name: Build
 
-on: [push]
+on:
+  push:
+    tags:
+      - '*.*.*'
 
 jobs:
   build:
@@ -9,3 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: ./gradlew build
+      - uses: softprops/action-gh-release@v1
+        with:
+          files: build/libs/*.jar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
