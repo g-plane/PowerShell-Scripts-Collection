@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: ./gradlew build
+      - run: cargo build --release
       - uses: softprops/action-gh-release@v1
         with:
-          files: build/libs/*.jar
+          files: ./target/release/rename-subtitle-files
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
