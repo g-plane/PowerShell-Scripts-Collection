@@ -8,12 +8,14 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: [ubuntu-latest, windows-latest]
     steps:
       - uses: actions/checkout@v2
       - run: cargo build --release
       - uses: softprops/action-gh-release@v1
         with:
-          files: ./target/release/rename-subtitle-files
+          files: |
+            ./target/release/rename-subtitle-files
+            ./target/release/rename-subtitle-files.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
