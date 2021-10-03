@@ -55,13 +55,15 @@ fn filter_subtitle_files<P: AsRef<Path>>(files: &[P]) -> impl Iterator<Item = &P
     files
         .iter()
         .map(|file| file.as_ref())
-        .filter(|file| {
-            file.extension()
-                .map(|ext| ext.eq_ignore_ascii_case("ass"))
-                .unwrap_or(false)
+        .filter(|file| match file.extension() {
+            Some(ext) => ext.eq_ignore_ascii_case("ass"),
+            None => false,
         })
         .filter(|file| {
-            let path = file.to_string_lossy();
-            !path.contains("TC") && !path.contains("cht")
+            let path = file.file_stem().map(|stem| stem.to_string_lossy());
+            match path {
+                Some(path) => !path.contains("TC") && !path.contains("cht"),
+                None => false,
+            }
         })
 }
