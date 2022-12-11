@@ -9,5 +9,5 @@ publish = false
 
 [dependencies]
 futures = "0.3"
-tokio = { version = "1.19", features = ["fs", "io-util", "macros", "rt"] }
+tokio = { version = "1.23", features = ["fs", "io-util", "macros", "rt"] }
 tokio-stream = { version = "0.1", features = ["fs"] }
