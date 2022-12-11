@@ -18,7 +18,7 @@ pub async fn process(target_dir: impl AsRef<Path>) -> Result<()> {
         .filter(|(file_type, _)| file_type.is_file())
         .map(|(_, entry)| entry.path())
         .collect::<Vec<_>>();
-    files.sort();
+    alphanumeric_sort::sort_path_slice(&mut files);
 
     let video_names = filter_video_names(&files);
     let subtitle_files = filter_subtitle_files(&files);
